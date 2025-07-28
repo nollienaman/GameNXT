@@ -1,0 +1,21 @@
+{
+  "name": "GameNXT Custom Game",
+  "short_name": "GameNXT",
+  "description": "Your Game, Your Vibe!",
+  "start_url": "game.html",
+  "display": "standalone",
+  "background_color": "#1e1e2f",
+  "theme_color": "#00ffe1",
+  "icons": [
+    {
+      "src": "char.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "char.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}

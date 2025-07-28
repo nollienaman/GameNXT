@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>GameNXT</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" href="https://placehold.co/16x16?text=NXT" type="image/x-icon">
+  <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+<div class="sidebar">
+  <div class="logo">GameNXT</div>
+
+  <div class="tagline-container">
+    <span class="tagline" style="font-family: 'Orbitron';">Your Game, Your Vibe!</span>
+    <div class="help-wrapper" style="font-family: 'Orbitron';">
+      <span class="help-text">How to use</span>
+      <div class="tooltip">
+        <p>1. Describe your game elements(Describe as much detailed as possible).</p>
+        <p>2. Click "Generate" to create previews.</p>
+        <p>3. Adjust difficulty and game logic.</p>
+        <p>4. Click "Create Customization" to finalize.</p>
+        <p>5. Download your game as a .zip file.</p>
+        <p>6. Enjoy your custom game!</p>
+        <p>7. Share your game with friends!</p>
+      </div>
+    </div>
+  </div>
+
+  <label>Describe Character Skin:</label>
+  <div class="input-group">
+    <input type="text" id="charPrompt" placeholder="e.g. a round little creature with big eyes no limbs and a beak">
+    <button id="charLuckyBtn">🎲</button>
+  </div>
+  <button id="charGenBtn">Generate</button>
+  <img id="charPreview" class="preview-img" src="generated_game/char.png?t=0" onerror="this.onerror=null; this.src='defaults/bleep.jpg';" alt="Character Preview">
+  <span id="charDefaultBadge" class="default-badge" style="display: none;">⚠️ Default used</span>
+
+  <label>Describe Background:</label>
+  <div class="input-group">
+    <input type="text" id="bgPrompt" placeholder="e.g. a futuristic city cyberpunk style and dark themed">
+    <button id="bgLuckyBtn">🎲</button>
+  </div>
+  <button id="bgGenBtn">Generate</button>
+  <img id="bgPreview" class="preview-img" src="generated_game/bg.png?t=0" onerror="this.onerror=null; this.src='defaults/dbg.jpg';" alt="Background Preview">
+  <span id="bgDefaultBadge" class="default-badge" style="display: none;">⚠️ Default used</span>
+
+  <label>Describe Obstacle:</label>
+  <div class="input-group">
+    <input type="text" id="obsPrompt" placeholder="e.g. laser pillars">
+    <button id="obsLuckyBtn">🎲</button>
+  </div>
+  <button id="obsGenBtn">Generate</button>
+  <img id="obsPreview" class="preview-img" src="generated_game/obs.png?t=0" onerror="this.onerror=null; this.src='defaults/do.png';" alt="Obstacle Preview">
+  <span id="obsDefaultBadge" class="default-badge" style="display: none;">⚠️ Default used</span>
+
+  <label>Game Logic:</label>
+  <textarea id="gameLogic" rows="3" placeholder="e.g. add flying enemies, make speed increase"></textarea>
+  
+  <label>Difficulty:</label>
+  <input type="range" id="difficultyRange" min="1" max="100" value="50">
+  
+  <button id="applyLogicBtn">Apply</button>
+  <button class="big-apply" id="createGameBtn">Create Customization</button>
+</div>
+
+<div class="main">
+  <div class="top-bar">
+    <div class="left-side">
+      <select id="gameSelect">
+        <option>Flappy Bird</option>
+        <option>Speed Runner</option>
+        <option>Match 3</option>
+        <option>Whack-a-Mole</option>
+        <option>Crossy Road</option>
+      </select>
+    </div>
+    <div class="right-side">
+      <button class="download-button" id="downloadZipBtn">Download .zip</button>
+      <button class="mobile-toggle" id="mobileToggleBtn">Mobile View</button>
+    </div>
+  </div>
+
+  <iframe id="gamePreview" class="game-preview" src="generated_game/game.html?t=0" title="Game Preview"></iframe>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
